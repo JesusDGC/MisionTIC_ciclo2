@@ -18,7 +18,20 @@ public class clsClient extends clsPerson{
         this.address = address;
         this.phone = phone;
     }
-
+	
+	public void buyServices(){
+        System.out.println("El cliente esta comprando un servicio");
+    }
+    
+    public void buyServices(String service){
+        System.out.println("El cliente esta comprando el servicio de " + service);
+    }
+    
+    
+    @Override
+    public void deal(){
+        System.out.println("Estoy comprando un producto");
+    }
     
     /**
      * @return the address

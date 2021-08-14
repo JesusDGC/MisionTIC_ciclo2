@@ -13,6 +13,12 @@ public class clsTrade {
     private String nameTrade;
     private String hierarchicalLevel;
 
+
+	public clsTrade(String nameTrade, String hierarchicalLevel) {
+        this.nameTrade = nameTrade;
+        this.hierarchicalLevel = hierarchicalLevel;
+    }
+	
     /**
      * @return the nameTrade
      */

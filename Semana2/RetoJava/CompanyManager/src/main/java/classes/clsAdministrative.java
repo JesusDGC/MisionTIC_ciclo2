@@ -11,8 +11,17 @@ package classes;
  */
 public class clsAdministrative {
     private String category;
-    private String subordinates;
+    private int subordinates;
 
+    public clsAdministrative(String category, int subordinates) {
+        this.category = category;
+        this.subordinates = subordinates;
+    }
+    
+    public void management(clsEmployee employee){
+        System.out.println("El/La emplead@ " + employee.getName() + "esta subordinando a " + this.subordinates + "empleados" );
+    }
+    
     /**
      * @return the category
      */
@@ -30,14 +39,14 @@ public class clsAdministrative {
     /**
      * @return the subordinates
      */
-    public String getSubordinates() {
+    public int getSubordinates() {
         return subordinates;
     }
 
     /**
      * @param subordinates the subordinates to set
      */
-    public void setSubordinates(String subordinates) {
+    public void setSubordinates(int subordinates) {
         this.subordinates = subordinates;
     }
 }

@@ -19,6 +19,11 @@ public class clsEmployee extends clsPerson{
         this.salary = salary;
         this.trade = trade;
     }
+	
+	@Override
+    public void deal(){
+        System.out.println("Estoy vendiendo un servicio");
+    }
 
 
     /**

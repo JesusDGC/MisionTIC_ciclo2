@@ -22,6 +22,10 @@ public class clsCompany {
         this.address = address;
         this.employee = employee;
     }
+	
+	 public void payTax(){
+        System.out.println(this.companyName + " esta pagando impuestos");
+    }
     
     /**
      * @return the companyName

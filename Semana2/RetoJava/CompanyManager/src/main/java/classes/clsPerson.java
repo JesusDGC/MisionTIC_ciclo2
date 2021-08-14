@@ -23,6 +23,13 @@ public class clsPerson {
         this.e_mail = e_mail;
     }
     
+	public void deal(){
+        System.out.println("Estoy realizando un acuerdo");
+    }
+    
+    public void speak(){
+        System.out.println("Estoy hablando");
+    }
     
 
     /**
