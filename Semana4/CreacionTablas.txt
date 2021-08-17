@@ -1,0 +1,71 @@
+Mi base de datos
+
+CREATE TABLE tb_document_type (
+  id int AUTO_INCREMENT primary key,
+  name varchar(50) NOT NULL
+);
+
+CREATE TABLE tb_transaction_type (
+  id int AUTO_INCREMENT primary key,
+  name varchar(50) NOT NULL
+);
+
+CREATE TABLE tb_wallet_status (
+  id int AUTO_INCREMENT primary key,
+  name varchar(50) NOT NULL
+);
+
+CREATE TABLE tb_user (
+    	id int AUTO_INCREMENT primary key,
+  	first_name varchar(50) NOT NULL,
+  	last_name varchar(50) NOT NULL,
+  	password varchar(30) NOT NULL,
+  	phone varchar(15) NOT NULL,
+  	email varchar(50) NOT NULL,
+  	born_date date NOT NULL,
+  	expedition_date_document date NOT NULL,
+  	document_number varchar(15) NOT NULL,
+  	id_document_type int NOT NULL,
+    FOREIGN KEY (id_document_type) REFERENCES tb_document_type(id),
+  	timestamp TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  	update_ DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE tb_wallet (
+  	id int AUTO_INCREMENT primary key,
+    amount float NOT NULL,
+    timestamp TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    update_ DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  	id_status int NOT NULL,
+    FOREIGN KEY (id_status) REFERENCES tb_wallet_status(id),
+  	id_user int NOT NULL,
+  	FOREIGN KEY (id_user) REFERENCES tb_user(id)
+);
+
+CREATE TABLE tb_pocket (
+    id int AUTO_INCREMENT primary key,
+  	name varchar(50) NOT NULL,
+  	timestamp TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  	update_ DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  	id_wallet int DEFAULT NULL,
+  	FOREIGN KEY (id_wallet) REFERENCES tb_wallet(id)
+);
+
+CREATE TABLE tb_pocket_transaction (
+  	id int AUTO_INCREMENT primary key,
+  	id_pocket int NOT NULL,
+  	id_transaction_type int NOT NULL,
+  	amount float NOT NULL,
+  	FOREIGN KEY (id_transaction_type) REFERENCES tb_transaction_type(id),
+  	FOREIGN KEY (id_pocket) REFERENCES tb_pocket(id)
+);
+
+CREATE TABLE tb_wallet_transaction (
+  	id int AUTO_INCREMENT primary key,
+  	id_wallet int NOT NULL,
+  	id_transaction_type int NOT NULL,
+  	amount float NOT NULL,
+  	FOREIGN KEY (id_transaction_type) REFERENCES tb_transaction_type(id),
+  	FOREIGN KEY (id_wallet) REFERENCES tb_wallet(id)
+);

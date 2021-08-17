@@ -1,0 +1,104 @@
+INSERT into tb_document_type (name) VALUES 
+  ('Tarjeta de Identidad'),
+  ('Cedula de Ciudadania'),
+  ('Cedula de Extranjeria'),
+  ('Pasaporte'),
+  ('Registro Civil')
+
+
+INSERT into tb_transaction_type (name) VALUES 
+  ('incoming_transfer'),
+  ('outgoing_transfer'),
+  ('recharges'),
+  ('payments'),
+  ('Withdrawals')
+
+
+INSERT into tb_wallet_status (name) VALUES 
+  ('Empty'),
+  ('Available'),
+  ('Overdrawn'),
+  ('Cancelled'),
+  ('Blocked')
+
+INSERT into tb_user (first_name, last_name, password, phone, email, born_date, expedition_date_document, document_number, id_document_type) VALUES 
+('Jesus','Garcia', '0578', '3108881420','jedaga@gmail.com', '1999-01-23','2017-01-29','109707598',2),
+('Daniel','Castaño', '9861', '3115498565','dc@gmail.com', '1989-02-25','2005-02-29','109741162',2),
+('Felipe','Castaño', '2658', '3107446487','pipe@gmail.com', '1953-04-16','1980-04-29','109746581',2),
+('Willy','Rex', '9816', '3154976585','willy@gmail.com', '1989-02-12','2005-02-29','109764198',3),
+('Antony','Silva', '1682', '3131648974','as@gmail.com', '1998-03-02','2016-03-29','109648918',3),
+('Mateo','Aviles', '6841', '3108679741','ma@gmail.com', '1989-04-01','2016-02-29','109618198',2),
+('Camilo','Ospina', '1547', '3115794197','co@gmail.com', '1956-05-02','1978-04-29','109765959',2),
+('Estefania','Quintero', '6891', '3151978415','tefe@gmail.com', '1992-06-30','2010-05-29','109919598',4),
+('Antonia','Garcia', '5687', '3108491647','ag@gmail.com', '1970-07-10','2000-06-29','109747959',2),
+('Suly','Lopez', '6598', '3187498147','suly@gmail.com', '1999-08-12','2017-07-29','109798429',4),
+('Fede','Cruz', '4785', '3184874915','fede@gmail.com', '2000-09-23','2018-08-29','109741511',2),
+('Paola','Garcia', '1354', '3108848948','pao@gmail.com', '2002-10-12','2020-10-29','109765425',4),
+('Janeth','Gonzales', '0487', '3108888456','jc@gmail.com', '2001-11-19','2020-11-29','109749896',2)
+
+
+
+INSERT into tb_wallet (id_status, amount, id_user) VALUES 
+  (2, 15094100, 1),
+  (1, 0, 2),
+  (2, 2984700, 3),
+  (5, 185000, 4),
+  (2, 150000, 5),
+  (1, 0, 6),
+  (2, 2354700, 7),
+  (5, 185000, 8),
+  (2, 1500000, 9),
+  (1, 0, 10),
+  (2, 2398700, 11),
+  (5, 1809900, 12),
+  (5, 18560, 13)
+
+
+INSERT into tb_pocket (name, id_wallet) VALUES 
+  ('AhorrosU', 1),
+  ('AhorrosCasa', 2),
+  ('Viaje', 3),
+  ('Inversion', 4),
+  ('Casa', 5),
+  ('Gastos Personales', 6),
+  ('Deudas', 7),
+  ('AhorrosGenerales', 8),
+  ('AhorrosU', 9),
+  ('Viaje', 10),
+  ('Viaje', 11),
+  ('AhorroCasa', 12),
+  ('Moto', 13)
+
+
+INSERT into tb_pocket_transaction (id_pocket, id_transaction_type, amount) VALUES 
+	(7, 2, -10000),
+  	(2, 1, 16000),
+  	(7, 3, -50000),
+  	(4, 1, 35000),
+  	(5, 1, 20500),
+    	(7, 4, -1000),
+  	(7, 5, -15000),
+  	(3, 1, 5000),
+  	(4, 1, 3000),
+  	(7, 2, -20500),
+   	(7, 5, -15000),
+  	(3, 1, 50000),
+  	(4, 1, 35000),
+  	(7, 2, -2500)
+
+INSERT into tb_wallet_transaction (id_wallet, id_transaction_type, amount) VALUES 
+  (1, 1, 100000),
+  (2, 1, 50000),
+  (3, 1, 25000),
+  (4, 2, -35000),
+  (5, 1, 10500),
+  (6, 3, -100000),
+  (7, 4, -50000),
+  (8, 1, 25000),
+  (9, 5, -35000),
+  (10, 1, 10500),
+  (11, 3, -100000),
+  (12, 1, 50000),
+  (13, 1, 25000),
+  (4, 1, 35000),
+  (2, 3, -10500)
