@@ -1,4 +1,5 @@
-Mi base de datos
+Mi base de datos 
+Fintech DB
 
 CREATE TABLE tb_document_type (
   id int AUTO_INCREMENT primary key,
